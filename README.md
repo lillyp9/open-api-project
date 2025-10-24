@@ -18,7 +18,7 @@ Right-click on folder 'index.html' -- Click on Live Server , it will open the wi
 You should see 'http://127.0.0.1:5500'.
 KEEP IT OPEN as you now have to get the backend server up and running. 
 
-#### 2.What you need install before getiing the backserver to run.
+#### 2. What you need install before getting the backserver to run.
 In the project folder, open teriminal and run:
 - Install dependencies by running command :
   ```bash
