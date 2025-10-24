@@ -26,7 +26,10 @@ In the project folder, open teriminal and run:
 **This installs everything needed in the backend server.**
 
 #### 3. Start Backend Server
-run command : npm start 
+run command :
+  ```bash
+   npm start 
+
 You should see a message in the terminal saying "Server running at http://localhost:3000"
 LEAVE THIS TERMINAL WINDOW OPEN .. this means your server is running .
 
@@ -36,4 +39,4 @@ Make Sure:
 - Frontend Server is running on 'http://127.0.0.1:5500'.
  ** Click on the buttons to see the artwork and the artwork information.**
 
-  ### IMPORTANT if you were to accidentally closed or just closed . Repeat Step 1 and Step 3. ###
+  ### IMPORTANT if you were to accidentally closed . Repeat Step 1 and Step 3. ###
