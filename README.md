@@ -1,5 +1,5 @@
 # Open-API-Project - Art Insitute of Chicago 
-This simple webpage dsiplay the artwork from the Art Institution of Chicago API. With just a click of the button features , the information of the artwork appears alongside the art. 
+This simple webpage display the artwork from the Art Institution of Chicago API. With just a click of the button features , the information of the artwork appears alongside the art. 
 
 ## How to the Open-API-Project 
 This project has both frontend (HTML,CSS,JAVASCRIPT) and backend server (Node,js + NPM).
