@@ -1,73 +1,69 @@
-
 body {
-    
-    background-color: #e0d5d5;
-    color: #222;
-    display: grid;
-    font-family: Georgia, 'Times New Roman', Times, seriffont-family;
-    margin: 0;
-    padding: 20px;
+  background-color: #e0d5d5;
+  color: #222;
+  display: grid;
+  font-family: Georgia, "Times New Roman", Times, seriffont-family;
+  margin: 0;
+  padding: 20px;
 }
-
 
 /* Heading */
 h1 {
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
 }
 
 /* Image Description */
 p {
-    font-size: 1.1rem;
-    margin-top: 0;
-    margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
 .artwork-img {
-    border-radius: 8px;
-    margin-top: 10px;
-    max-width: 400px;
+  border-radius: 8px;
+  margin-top: 10px;
+  max-width: 400px;
 }
 
-
 .img-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-top: 10px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
 .img-description {
-    display: inline-block;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-top: 10px;
-    max-width: 600px;
-    text-align: left;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 10px;
+  max-width: 600px;
+  text-align: left;
 }
 
 .copyright {
-    color: grey;
-    font-size: 0.9rem;
-    margin-top: 20px;
+  color: grey;
+  font-size: 0.9rem;
+  margin-top: 20px;
 }
 
 /* NAV Buttons */
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 button {
-    background: #0077cc;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
+  background: #0077cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 button:hover {
-    background: #005fa3;
+  background: #005fa3;
 }

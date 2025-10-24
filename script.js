@@ -1,27 +1,25 @@
 const ARTWORK_ID = 15563;
 const API_URL = `https://api.artic.edu/api/v1/artworks/${ARTWORK_ID}`;
 
-async function fetchArtwork(){
+async function fetchArtwork() {
   try {
     const response = await fetch(API_URL);
     if (!response.ok) throw new Error("Network response was not ok");
     const data = await response.json();
     const artwork = data.data;
-   
+
     const title = artwork.title;
     const artist = artwork.artist_display;
     console.log("Title:", title);
-    console.log("Artist:",artist);
-  }
-  catch (error) {
+    console.log("Artist:", artist);
+  } catch (error) {
     console.error("Fetch error:", error);
-}
+  }
 }
 
 fetchArtwork();
 
-
-//Artwork 
+//Artwork
 
 // Reusing ARTWORK_ID and API_URL declared earlier
 
@@ -35,38 +33,39 @@ const imgDescription = document.querySelector(".img-description");
 const copyrightText = document.querySelector(".copyright");
 const IMAGE_SIZE = 600;
 
-async function fetchArtistImage(){
+async function fetchArtistImage() {
   try {
     const response = await fetch(API_URL);
     if (!response.ok) throw new Error("Network response was not ok");
     const data = await response.json();
     const imageId = data.data.image_id;
-    const baseURL =data.config.iiif_url;
+    const baseURL = data.config.iiif_url;
     const fullImageURL = `${baseURL}/${imageId}/full/${IMAGE_SIZE},/0/default.jpg`;
     imgEl.src = fullImageURL;
-  }
-  catch (error) {
+  } catch (error) {
     console.error("Fetch error:", error);
-}
+  }
 }
 //Artwork Info//
-async function fetchArtworkInfo(){
-  try{
-    const response = await fetch(API_URL);
+async function fetchArtworkInfo(urlToFetch) {
+  try {
+    const response = await fetch(urlToFetch);
     if (!response.ok) throw new Error("Network response was not ok");
-    const {data} = await response.json();
-    const {title, description} = data;
+    const { data } = await response.json();
+    const { title, description } = data;
 
     imgTitle.textContent = title;
-    imgDescription.innerHTML=description;
-    
-  }
-  catch (error) {
+    imgDescription.innerHTML = description;
+  } catch (error) {
     console.error("Fetch error:", error);
-}
+  }
 }
 
 //Button Event Listeners//
-artworkImageButton.addEventListener('click', () => { fetchArtistImage(); });
+artworkImageButton.addEventListener("click", () => {
+  fetchArtistImage();
+});
 
-artworkInfoButton.addEventListener('click', () =>  {fetchArtworkInfo(); });
+artworkInfoButton.addEventListener("click", () => {
+  fetchArtworkInfo();
+});
