@@ -27,9 +27,10 @@ In the project folder, open teriminal and run:
 
 #### 3. Start Backend Server
 run command :
+  ```bash
+   npm start 
 
-    npm start
-You should see a message in the terminal saying "Server running at http://localhost:3000".
+You should see a message in the terminal saying "Server running at http://localhost:3000"
 LEAVE THIS TERMINAL WINDOW OPEN .. this means your server is running .
 
  ## Using Webpage.
