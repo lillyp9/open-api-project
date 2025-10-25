@@ -1,30 +1,9 @@
-const ARTWORK_ID = 15563;
-const API_URL = `https://api.artic.edu/api/v1/artworks/${ARTWORK_ID}`;
+let artworkId = null;
+const API_URL =
+  "https://api.artic.edu/api/v1/artworks/search?q=painting&fields=id,title,image_id&has_image=1&limit=20";
 
-async function fetchArtwork() {
-  try {
-    const response = await fetch(API_URL);
-    if (!response.ok) throw new Error("Network response was not ok");
-    const data = await response.json();
-    const artwork = data.data;
-
-    const title = artwork.title;
-    const artist = artwork.artist_display;
-    console.log("Title:", title);
-    console.log("Artist:", artist);
-  } catch (error) {
-    console.error("Fetch error:", error);
-  }
-}
-
-fetchArtwork();
-
-//Artwork
-
-// Reusing ARTWORK_ID and API_URL declared earlier
-
-const artworkInfoButton = document.querySelector("#artwork-info-button");
 const artworkImageButton = document.querySelector("#artwork-image-button");
+const artworkInfoButton = document.querySelector("#artwork-info-button");
 
 const imgEl = document.querySelector(".artwork-img");
 const imgTitle = document.querySelector(".img-title");
@@ -38,18 +17,22 @@ async function fetchArtistImage() {
     const response = await fetch(API_URL);
     if (!response.ok) throw new Error("Network response was not ok");
     const data = await response.json();
-    const imageId = data.data.image_id;
+    const randomImage = data.data[Math.floor(Math.random() * data.data.length)];
+    const imageId = randomImage.image_id;
+    artworkId = randomImage.id;
     const baseURL = data.config.iiif_url;
     const fullImageURL = `${baseURL}/${imageId}/full/${IMAGE_SIZE},/0/default.jpg`;
     imgEl.src = fullImageURL;
+    imgTitle.textContent = "";
+    imgDescription.textContent = "";
   } catch (error) {
     console.error("Fetch error:", error);
   }
 }
 //Artwork Info//
-async function fetchArtworkInfo(urlToFetch) {
+async function fetchArtworkInfo(id) {
   try {
-    const response = await fetch(urlToFetch);
+    const response = await fetch(`https://api.artic.edu/api/v1/artworks/${id}`);
     if (!response.ok) throw new Error("Network response was not ok");
     const { data } = await response.json();
     const { title, description } = data;
@@ -65,7 +48,8 @@ async function fetchArtworkInfo(urlToFetch) {
 artworkImageButton.addEventListener("click", () => {
   fetchArtistImage();
 });
-
 artworkInfoButton.addEventListener("click", () => {
-  fetchArtworkInfo();
+  if (!artworkId) return;
+  fetchArtworkInfo(artworkId);
+  artworkId = null;
 });
